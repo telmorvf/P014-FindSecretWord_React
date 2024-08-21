@@ -33,7 +33,7 @@ function App() {
   const [guesses, setGuesses] = useState(guessesQty);
   const [score, setScore] = useState(0);
 
-
+  console.log('1: ', score)
   const pickWordAndCategory = useCallback(() => {
     // pick random category
     const categories = Object.keys(words)
@@ -110,10 +110,13 @@ function App() {
     const uniqueLetters = [...new Set(letters)]
 
     // win condition
-    if (guessedLetters.length === uniqueLetters.length) {
-      //add score
-      setScore((actualScore) => actualScore += 100)
 
+    if ((guessedLetters.length === uniqueLetters.length) && letters.length !== 0) {
+      //debugger
+      //add score
+      console.log('2: ', score)
+      setScore((actualScore) => actualScore += 100)
+      console.log('3: ', score)
       // restar the game
       startGame()
     }
@@ -129,7 +132,7 @@ function App() {
     setGameStage(stages[0].name)
   }
 
-
+  console.log('4: ', score)
   return (
     <div className="App">
       {gameStage === 'start' && <StartScreen

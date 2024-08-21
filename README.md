@@ -10,6 +10,7 @@ Currently, two official plugins are available:
 ### intalall
 
 - npm i
--
+- 
 - npm install gh-pages --save-dev
 - npm run deploy
+-
